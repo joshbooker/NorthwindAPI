@@ -1,0 +1,2418 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.1.0",
+    "title": "OData Service",
+    "description": "The OData Service at http://localhost:57336/Northwind/v4/$metadata"
+  },
+  "host": "localhost:57336",
+  "basePath": "/Northwind/v4",
+  "schemes": [ "http" ],
+  "consumes": [ "application/json" ],
+  "produces": [ "application/json" ],
+  "paths": {
+    "/Categories": {
+      "get": {
+        "tags": [ "Categories" ],
+        "summary": "Get EntitySet Categories",
+        "description": "Returns the EntitySet Categories",
+        "operationId": "Categories_Get",
+        "parameters": [
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expands related entities inline.",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filters the results, based on a Boolean condition.",
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Sorts the results.",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Returns only the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Skips the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "Includes a count of the matching results in the reponse.",
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Categories",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Category" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "Categories" ],
+        "summary": "Post a new entity to EntitySet Categories",
+        "description": "Post a new entity to EntitySet Categories",
+        "operationId": "Categories_Post",
+        "parameters": [
+          {
+            "name": "Category",
+            "in": "body",
+            "description": "The entity to post",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Category" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Categories",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Category" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Categories({CategoryID})": {
+      "get": {
+        "tags": [ "Categories" ],
+        "summary": "Get entity from Categories by key.",
+        "description": "Returns the entity with the key from Categories",
+        "operationId": "Categories_GetById",
+        "parameters": [
+          {
+            "name": "CategoryID",
+            "in": "path",
+            "description": "key: CategoryID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Categories",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Category" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [ "Categories" ],
+        "summary": "Delete entity in EntitySet Categories",
+        "description": "Delete entity in EntitySet Categories",
+        "operationId": "Categories_DeleteById",
+        "parameters": [
+          {
+            "name": "CategoryID",
+            "in": "path",
+            "description": "key: CategoryID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "If-Match header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [ "Categories" ],
+        "summary": "Update entity in EntitySet Categories",
+        "description": "Update entity in EntitySet Categories",
+        "operationId": "Categories_PatchById",
+        "parameters": [
+          {
+            "name": "CategoryID",
+            "in": "path",
+            "description": "key: CategoryID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Category",
+            "in": "body",
+            "description": "The entity to patch",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Category" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Products": {
+      "get": {
+        "tags": [ "Products" ],
+        "summary": "Get EntitySet Products",
+        "description": "Returns the EntitySet Products",
+        "operationId": "Products_Get",
+        "parameters": [
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expands related entities inline.",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filters the results, based on a Boolean condition.",
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Sorts the results.",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Returns only the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Skips the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "Includes a count of the matching results in the reponse.",
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Products",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Product" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "Products" ],
+        "summary": "Post a new entity to EntitySet Products",
+        "description": "Post a new entity to EntitySet Products",
+        "operationId": "Products_Post",
+        "parameters": [
+          {
+            "name": "Product",
+            "in": "body",
+            "description": "The entity to post",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Product" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Products",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Product" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Products({ProductID})": {
+      "get": {
+        "tags": [ "Products" ],
+        "summary": "Get entity from Products by key.",
+        "description": "Returns the entity with the key from Products",
+        "operationId": "Products_GetById",
+        "parameters": [
+          {
+            "name": "ProductID",
+            "in": "path",
+            "description": "key: ProductID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Products",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Product" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [ "Products" ],
+        "summary": "Delete entity in EntitySet Products",
+        "description": "Delete entity in EntitySet Products",
+        "operationId": "Products_DeleteById",
+        "parameters": [
+          {
+            "name": "ProductID",
+            "in": "path",
+            "description": "key: ProductID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "If-Match header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [ "Products" ],
+        "summary": "Update entity in EntitySet Products",
+        "description": "Update entity in EntitySet Products",
+        "operationId": "Products_PatchById",
+        "parameters": [
+          {
+            "name": "ProductID",
+            "in": "path",
+            "description": "key: ProductID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Product",
+            "in": "body",
+            "description": "The entity to patch",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Product" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Order_Details": {
+      "get": {
+        "tags": [ "Order_Details" ],
+        "summary": "Get EntitySet Order_Details",
+        "description": "Returns the EntitySet Order_Details",
+        "operationId": "Order_Details_Get",
+        "parameters": [
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expands related entities inline.",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filters the results, based on a Boolean condition.",
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Sorts the results.",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Returns only the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Skips the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "Includes a count of the matching results in the reponse.",
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Order_Details",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Order_Detail" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "Order_Details" ],
+        "summary": "Post a new entity to EntitySet Order_Details",
+        "description": "Post a new entity to EntitySet Order_Details",
+        "operationId": "Order_Details_Post",
+        "parameters": [
+          {
+            "name": "Order_Detail",
+            "in": "body",
+            "description": "The entity to post",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Order_Detail" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Order_Details",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Order_Detail" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Order_Details({OrderID}, {ProductID})": {
+      "get": {
+        "tags": [ "Order_Details" ],
+        "summary": "Get entity from Order_Details by key.",
+        "description": "Returns the entity with the key from Order_Details",
+        "operationId": "Order_Details_GetById",
+        "parameters": [
+          {
+            "name": "OrderID",
+            "in": "path",
+            "description": "key: OrderID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "ProductID",
+            "in": "path",
+            "description": "key: ProductID",
+            "type": "integer"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Order_Details",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Order_Detail" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [ "Order_Details" ],
+        "summary": "Delete entity in EntitySet Order_Details",
+        "description": "Delete entity in EntitySet Order_Details",
+        "operationId": "Order_Details_DeleteById",
+        "parameters": [
+          {
+            "name": "OrderID",
+            "in": "path",
+            "description": "key: OrderID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "ProductID",
+            "in": "path",
+            "description": "key: ProductID",
+            "type": "integer"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "If-Match header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [ "Order_Details" ],
+        "summary": "Update entity in EntitySet Order_Details",
+        "description": "Update entity in EntitySet Order_Details",
+        "operationId": "Order_Details_PatchById",
+        "parameters": [
+          {
+            "name": "OrderID",
+            "in": "path",
+            "description": "key: OrderID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "ProductID",
+            "in": "path",
+            "description": "key: ProductID",
+            "type": "integer"
+          },
+          {
+            "name": "Order_Detail",
+            "in": "body",
+            "description": "The entity to patch",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Order_Detail" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Orders": {
+      "get": {
+        "tags": [ "Orders" ],
+        "summary": "Get EntitySet Orders",
+        "description": "Returns the EntitySet Orders",
+        "operationId": "Orders_Get",
+        "parameters": [
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expands related entities inline.",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filters the results, based on a Boolean condition.",
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Sorts the results.",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Returns only the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Skips the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "Includes a count of the matching results in the reponse.",
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Orders",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Order" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "Orders" ],
+        "summary": "Post a new entity to EntitySet Orders",
+        "description": "Post a new entity to EntitySet Orders",
+        "operationId": "Orders_Post",
+        "parameters": [
+          {
+            "name": "Order",
+            "in": "body",
+            "description": "The entity to post",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Order" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Orders",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Order" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Orders({OrderID})": {
+      "get": {
+        "tags": [ "Orders" ],
+        "summary": "Get entity from Orders by key.",
+        "description": "Returns the entity with the key from Orders",
+        "operationId": "Orders_GetById",
+        "parameters": [
+          {
+            "name": "OrderID",
+            "in": "path",
+            "description": "key: OrderID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Orders",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Order" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [ "Orders" ],
+        "summary": "Delete entity in EntitySet Orders",
+        "description": "Delete entity in EntitySet Orders",
+        "operationId": "Orders_DeleteById",
+        "parameters": [
+          {
+            "name": "OrderID",
+            "in": "path",
+            "description": "key: OrderID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "If-Match header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [ "Orders" ],
+        "summary": "Update entity in EntitySet Orders",
+        "description": "Update entity in EntitySet Orders",
+        "operationId": "Orders_PatchById",
+        "parameters": [
+          {
+            "name": "OrderID",
+            "in": "path",
+            "description": "key: OrderID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Order",
+            "in": "body",
+            "description": "The entity to patch",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Order" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Customers": {
+      "get": {
+        "tags": [ "Customers" ],
+        "summary": "Get EntitySet Customers",
+        "description": "Returns the EntitySet Customers",
+        "operationId": "Customers_Get",
+        "parameters": [
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expands related entities inline.",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filters the results, based on a Boolean condition.",
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Sorts the results.",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Returns only the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Skips the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "Includes a count of the matching results in the reponse.",
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Customers",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Customer" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "Customers" ],
+        "summary": "Post a new entity to EntitySet Customers",
+        "description": "Post a new entity to EntitySet Customers",
+        "operationId": "Customers_Post",
+        "parameters": [
+          {
+            "name": "Customer",
+            "in": "body",
+            "description": "The entity to post",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Customer" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Customers",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Customer" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Customers('{CustomerID}')": {
+      "get": {
+        "tags": [ "Customers" ],
+        "summary": "Get entity from Customers by key.",
+        "description": "Returns the entity with the key from Customers",
+        "operationId": "Customers_GetById",
+        "parameters": [
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "description": "key: CustomerID",
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Customers",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Customer" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [ "Customers" ],
+        "summary": "Delete entity in EntitySet Customers",
+        "description": "Delete entity in EntitySet Customers",
+        "operationId": "Customers_DeleteById",
+        "parameters": [
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "description": "key: CustomerID",
+            "type": "string"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "If-Match header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [ "Customers" ],
+        "summary": "Update entity in EntitySet Customers",
+        "description": "Update entity in EntitySet Customers",
+        "operationId": "Customers_PatchById",
+        "parameters": [
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "description": "key: CustomerID",
+            "type": "string"
+          },
+          {
+            "name": "Customer",
+            "in": "body",
+            "description": "The entity to patch",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Customer" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/CustomerDemographics": {
+      "get": {
+        "tags": [ "CustomerDemographics" ],
+        "summary": "Get EntitySet CustomerDemographics",
+        "description": "Returns the EntitySet CustomerDemographics",
+        "operationId": "CustomerDemographics_Get",
+        "parameters": [
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expands related entities inline.",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filters the results, based on a Boolean condition.",
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Sorts the results.",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Returns only the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Skips the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "Includes a count of the matching results in the reponse.",
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet CustomerDemographics",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.CustomerDemographic" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "CustomerDemographics" ],
+        "summary": "Post a new entity to EntitySet CustomerDemographics",
+        "description": "Post a new entity to EntitySet CustomerDemographics",
+        "operationId": "CustomerDemographics_Post",
+        "parameters": [
+          {
+            "name": "CustomerDemographic",
+            "in": "body",
+            "description": "The entity to post",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.CustomerDemographic" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet CustomerDemographics",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.CustomerDemographic" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/CustomerDemographics('{CustomerTypeID}')": {
+      "get": {
+        "tags": [ "CustomerDemographics" ],
+        "summary": "Get entity from CustomerDemographics by key.",
+        "description": "Returns the entity with the key from CustomerDemographics",
+        "operationId": "CustomerDemographics_GetById",
+        "parameters": [
+          {
+            "name": "CustomerTypeID",
+            "in": "path",
+            "description": "key: CustomerTypeID",
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet CustomerDemographics",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.CustomerDemographic" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [ "CustomerDemographics" ],
+        "summary": "Delete entity in EntitySet CustomerDemographics",
+        "description": "Delete entity in EntitySet CustomerDemographics",
+        "operationId": "CustomerDemographics_DeleteById",
+        "parameters": [
+          {
+            "name": "CustomerTypeID",
+            "in": "path",
+            "description": "key: CustomerTypeID",
+            "type": "string"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "If-Match header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [ "CustomerDemographics" ],
+        "summary": "Update entity in EntitySet CustomerDemographics",
+        "description": "Update entity in EntitySet CustomerDemographics",
+        "operationId": "CustomerDemographics_PatchById",
+        "parameters": [
+          {
+            "name": "CustomerTypeID",
+            "in": "path",
+            "description": "key: CustomerTypeID",
+            "type": "string"
+          },
+          {
+            "name": "CustomerDemographic",
+            "in": "body",
+            "description": "The entity to patch",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.CustomerDemographic" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees": {
+      "get": {
+        "tags": [ "Employees" ],
+        "summary": "Get EntitySet Employees",
+        "description": "Returns the EntitySet Employees",
+        "operationId": "Employees_Get",
+        "parameters": [
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expands related entities inline.",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filters the results, based on a Boolean condition.",
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Sorts the results.",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Returns only the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Skips the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "Includes a count of the matching results in the reponse.",
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Employees",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Employee" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "Employees" ],
+        "summary": "Post a new entity to EntitySet Employees",
+        "description": "Post a new entity to EntitySet Employees",
+        "operationId": "Employees_Post",
+        "parameters": [
+          {
+            "name": "Employee",
+            "in": "body",
+            "description": "The entity to post",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Employee" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Employees",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Employee" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Employees({EmployeeID})": {
+      "get": {
+        "tags": [ "Employees" ],
+        "summary": "Get entity from Employees by key.",
+        "description": "Returns the entity with the key from Employees",
+        "operationId": "Employees_GetById",
+        "parameters": [
+          {
+            "name": "EmployeeID",
+            "in": "path",
+            "description": "key: EmployeeID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Employees",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Employee" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [ "Employees" ],
+        "summary": "Delete entity in EntitySet Employees",
+        "description": "Delete entity in EntitySet Employees",
+        "operationId": "Employees_DeleteById",
+        "parameters": [
+          {
+            "name": "EmployeeID",
+            "in": "path",
+            "description": "key: EmployeeID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "If-Match header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [ "Employees" ],
+        "summary": "Update entity in EntitySet Employees",
+        "description": "Update entity in EntitySet Employees",
+        "operationId": "Employees_PatchById",
+        "parameters": [
+          {
+            "name": "EmployeeID",
+            "in": "path",
+            "description": "key: EmployeeID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Employee",
+            "in": "body",
+            "description": "The entity to patch",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Employee" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Territories": {
+      "get": {
+        "tags": [ "Territories" ],
+        "summary": "Get EntitySet Territories",
+        "description": "Returns the EntitySet Territories",
+        "operationId": "Territories_Get",
+        "parameters": [
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expands related entities inline.",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filters the results, based on a Boolean condition.",
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Sorts the results.",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Returns only the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Skips the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "Includes a count of the matching results in the reponse.",
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Territories",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Territory" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "Territories" ],
+        "summary": "Post a new entity to EntitySet Territories",
+        "description": "Post a new entity to EntitySet Territories",
+        "operationId": "Territories_Post",
+        "parameters": [
+          {
+            "name": "Territory",
+            "in": "body",
+            "description": "The entity to post",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Territory" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Territories",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Territory" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Territories('{TerritoryID}')": {
+      "get": {
+        "tags": [ "Territories" ],
+        "summary": "Get entity from Territories by key.",
+        "description": "Returns the entity with the key from Territories",
+        "operationId": "Territories_GetById",
+        "parameters": [
+          {
+            "name": "TerritoryID",
+            "in": "path",
+            "description": "key: TerritoryID",
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Territories",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Territory" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [ "Territories" ],
+        "summary": "Delete entity in EntitySet Territories",
+        "description": "Delete entity in EntitySet Territories",
+        "operationId": "Territories_DeleteById",
+        "parameters": [
+          {
+            "name": "TerritoryID",
+            "in": "path",
+            "description": "key: TerritoryID",
+            "type": "string"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "If-Match header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [ "Territories" ],
+        "summary": "Update entity in EntitySet Territories",
+        "description": "Update entity in EntitySet Territories",
+        "operationId": "Territories_PatchById",
+        "parameters": [
+          {
+            "name": "TerritoryID",
+            "in": "path",
+            "description": "key: TerritoryID",
+            "type": "string"
+          },
+          {
+            "name": "Territory",
+            "in": "body",
+            "description": "The entity to patch",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Territory" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Regions": {
+      "get": {
+        "tags": [ "Regions" ],
+        "summary": "Get EntitySet Regions",
+        "description": "Returns the EntitySet Regions",
+        "operationId": "Regions_Get",
+        "parameters": [
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expands related entities inline.",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filters the results, based on a Boolean condition.",
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Sorts the results.",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Returns only the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Skips the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "Includes a count of the matching results in the reponse.",
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Regions",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Region" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "Regions" ],
+        "summary": "Post a new entity to EntitySet Regions",
+        "description": "Post a new entity to EntitySet Regions",
+        "operationId": "Regions_Post",
+        "parameters": [
+          {
+            "name": "Region",
+            "in": "body",
+            "description": "The entity to post",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Region" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Regions",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Region" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Regions({RegionID})": {
+      "get": {
+        "tags": [ "Regions" ],
+        "summary": "Get entity from Regions by key.",
+        "description": "Returns the entity with the key from Regions",
+        "operationId": "Regions_GetById",
+        "parameters": [
+          {
+            "name": "RegionID",
+            "in": "path",
+            "description": "key: RegionID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Regions",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Region" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [ "Regions" ],
+        "summary": "Delete entity in EntitySet Regions",
+        "description": "Delete entity in EntitySet Regions",
+        "operationId": "Regions_DeleteById",
+        "parameters": [
+          {
+            "name": "RegionID",
+            "in": "path",
+            "description": "key: RegionID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "If-Match header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [ "Regions" ],
+        "summary": "Update entity in EntitySet Regions",
+        "description": "Update entity in EntitySet Regions",
+        "operationId": "Regions_PatchById",
+        "parameters": [
+          {
+            "name": "RegionID",
+            "in": "path",
+            "description": "key: RegionID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Region",
+            "in": "body",
+            "description": "The entity to patch",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Region" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Shippers": {
+      "get": {
+        "tags": [ "Shippers" ],
+        "summary": "Get EntitySet Shippers",
+        "description": "Returns the EntitySet Shippers",
+        "operationId": "Shippers_Get",
+        "parameters": [
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expands related entities inline.",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filters the results, based on a Boolean condition.",
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Sorts the results.",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Returns only the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Skips the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "Includes a count of the matching results in the reponse.",
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Shippers",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Shipper" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "Shippers" ],
+        "summary": "Post a new entity to EntitySet Shippers",
+        "description": "Post a new entity to EntitySet Shippers",
+        "operationId": "Shippers_Post",
+        "parameters": [
+          {
+            "name": "Shipper",
+            "in": "body",
+            "description": "The entity to post",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Shipper" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Shippers",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Shipper" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Shippers({ShipperID})": {
+      "get": {
+        "tags": [ "Shippers" ],
+        "summary": "Get entity from Shippers by key.",
+        "description": "Returns the entity with the key from Shippers",
+        "operationId": "Shippers_GetById",
+        "parameters": [
+          {
+            "name": "ShipperID",
+            "in": "path",
+            "description": "key: ShipperID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Shippers",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Shipper" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [ "Shippers" ],
+        "summary": "Delete entity in EntitySet Shippers",
+        "description": "Delete entity in EntitySet Shippers",
+        "operationId": "Shippers_DeleteById",
+        "parameters": [
+          {
+            "name": "ShipperID",
+            "in": "path",
+            "description": "key: ShipperID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "If-Match header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [ "Shippers" ],
+        "summary": "Update entity in EntitySet Shippers",
+        "description": "Update entity in EntitySet Shippers",
+        "operationId": "Shippers_PatchById",
+        "parameters": [
+          {
+            "name": "ShipperID",
+            "in": "path",
+            "description": "key: ShipperID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Shipper",
+            "in": "body",
+            "description": "The entity to patch",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Shipper" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Suppliers": {
+      "get": {
+        "tags": [ "Suppliers" ],
+        "summary": "Get EntitySet Suppliers",
+        "description": "Returns the EntitySet Suppliers",
+        "operationId": "Suppliers_Get",
+        "parameters": [
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expands related entities inline.",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filters the results, based on a Boolean condition.",
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Sorts the results.",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "Returns only the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "Skips the first n results.",
+            "type": "integer"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "Includes a count of the matching results in the reponse.",
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Suppliers",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Supplier" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "Suppliers" ],
+        "summary": "Post a new entity to EntitySet Suppliers",
+        "description": "Post a new entity to EntitySet Suppliers",
+        "operationId": "Suppliers_Post",
+        "parameters": [
+          {
+            "name": "Supplier",
+            "in": "body",
+            "description": "The entity to post",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Supplier" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Suppliers",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Supplier" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Suppliers({SupplierID})": {
+      "get": {
+        "tags": [ "Suppliers" ],
+        "summary": "Get entity from Suppliers by key.",
+        "description": "Returns the entity with the key from Suppliers",
+        "operationId": "Suppliers_GetById",
+        "parameters": [
+          {
+            "name": "SupplierID",
+            "in": "path",
+            "description": "key: SupplierID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Selects which properties to include in the response.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "EntitySet Suppliers",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Supplier" }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [ "Suppliers" ],
+        "summary": "Delete entity in EntitySet Suppliers",
+        "description": "Delete entity in EntitySet Suppliers",
+        "operationId": "Suppliers_DeleteById",
+        "parameters": [
+          {
+            "name": "SupplierID",
+            "in": "path",
+            "description": "key: SupplierID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "If-Match header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [ "Suppliers" ],
+        "summary": "Update entity in EntitySet Suppliers",
+        "description": "Update entity in EntitySet Suppliers",
+        "operationId": "Suppliers_PatchById",
+        "parameters": [
+          {
+            "name": "SupplierID",
+            "in": "path",
+            "description": "key: SupplierID",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Supplier",
+            "in": "body",
+            "description": "The entity to patch",
+            "schema": { "$ref": "#/definitions/NorthwindAPI.Models.Supplier" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Empty response" },
+          "default": {
+            "description": "Unexpected error",
+            "schema": { "$ref": "#/definitions/_Error" }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "NorthwindAPI.Models.Category": {
+      "properties": {
+        "CategoryID": {
+          "format": "int32",
+          "description": "CategoryID",
+          "type": "integer"
+        },
+        "CategoryName": {
+          "description": "CategoryName",
+          "type": "string"
+        },
+        "Description": {
+          "description": "Description",
+          "type": "string"
+        },
+        "Picture": {
+          "description": "Picture",
+          "type": "string"
+        }
+      }
+    },
+    "NorthwindAPI.Models.Product": {
+      "properties": {
+        "ProductID": {
+          "format": "int32",
+          "description": "ProductID",
+          "type": "integer"
+        },
+        "ProductName": {
+          "description": "ProductName",
+          "type": "string"
+        },
+        "SupplierID": {
+          "format": "int32",
+          "description": "SupplierID",
+          "type": "integer"
+        },
+        "CategoryID": {
+          "format": "int32",
+          "description": "CategoryID",
+          "type": "integer"
+        },
+        "QuantityPerUnit": {
+          "description": "QuantityPerUnit",
+          "type": "string"
+        },
+        "UnitPrice": {
+          "description": "UnitPrice",
+          "type": "string"
+        },
+        "UnitsInStock": {
+          "format": "int32",
+          "description": "UnitsInStock",
+          "type": "integer"
+        },
+        "UnitsOnOrder": {
+          "format": "int32",
+          "description": "UnitsOnOrder",
+          "type": "integer"
+        },
+        "ReorderLevel": {
+          "format": "int32",
+          "description": "ReorderLevel",
+          "type": "integer"
+        },
+        "Discontinued": {
+          "description": "Discontinued",
+          "type": "boolean"
+        }
+      }
+    },
+    "NorthwindAPI.Models.Order_Detail": {
+      "properties": {
+        "OrderID": {
+          "format": "int32",
+          "description": "OrderID",
+          "type": "integer"
+        },
+        "ProductID": {
+          "format": "int32",
+          "description": "ProductID",
+          "type": "integer"
+        },
+        "UnitPrice": {
+          "description": "UnitPrice",
+          "type": "string"
+        },
+        "Quantity": {
+          "format": "int32",
+          "description": "Quantity",
+          "type": "integer"
+        },
+        "Discount": {
+          "format": "float",
+          "description": "Discount",
+          "type": "number"
+        }
+      }
+    },
+    "NorthwindAPI.Models.Order": {
+      "properties": {
+        "OrderID": {
+          "format": "int32",
+          "description": "OrderID",
+          "type": "integer"
+        },
+        "CustomerID": {
+          "description": "CustomerID",
+          "type": "string"
+        },
+        "EmployeeID": {
+          "format": "int32",
+          "description": "EmployeeID",
+          "type": "integer"
+        },
+        "OrderDate": {
+          "format": "date",
+          "description": "OrderDate",
+          "type": "string"
+        },
+        "RequiredDate": {
+          "format": "date",
+          "description": "RequiredDate",
+          "type": "string"
+        },
+        "ShippedDate": {
+          "format": "date",
+          "description": "ShippedDate",
+          "type": "string"
+        },
+        "ShipVia": {
+          "format": "int32",
+          "description": "ShipVia",
+          "type": "integer"
+        },
+        "Freight": {
+          "description": "Freight",
+          "type": "string"
+        },
+        "ShipName": {
+          "description": "ShipName",
+          "type": "string"
+        },
+        "ShipAddress": {
+          "description": "ShipAddress",
+          "type": "string"
+        },
+        "ShipCity": {
+          "description": "ShipCity",
+          "type": "string"
+        },
+        "ShipRegion": {
+          "description": "ShipRegion",
+          "type": "string"
+        },
+        "ShipPostalCode": {
+          "description": "ShipPostalCode",
+          "type": "string"
+        },
+        "ShipCountry": {
+          "description": "ShipCountry",
+          "type": "string"
+        }
+      }
+    },
+    "NorthwindAPI.Models.Customer": {
+      "properties": {
+        "CustomerID": {
+          "description": "CustomerID",
+          "type": "string"
+        },
+        "CompanyName": {
+          "description": "CompanyName",
+          "type": "string"
+        },
+        "ContactName": {
+          "description": "ContactName",
+          "type": "string"
+        },
+        "ContactTitle": {
+          "description": "ContactTitle",
+          "type": "string"
+        },
+        "Address": {
+          "description": "Address",
+          "type": "string"
+        },
+        "City": {
+          "description": "City",
+          "type": "string"
+        },
+        "Region": {
+          "description": "Region",
+          "type": "string"
+        },
+        "PostalCode": {
+          "description": "PostalCode",
+          "type": "string"
+        },
+        "Country": {
+          "description": "Country",
+          "type": "string"
+        },
+        "Phone": {
+          "description": "Phone",
+          "type": "string"
+        },
+        "Fax": {
+          "description": "Fax",
+          "type": "string"
+        }
+      }
+    },
+    "NorthwindAPI.Models.CustomerDemographic": {
+      "properties": {
+        "CustomerTypeID": {
+          "description": "CustomerTypeID",
+          "type": "string"
+        },
+        "CustomerDesc": {
+          "description": "CustomerDesc",
+          "type": "string"
+        }
+      }
+    },
+    "NorthwindAPI.Models.Employee": {
+      "properties": {
+        "EmployeeID": {
+          "format": "int32",
+          "description": "EmployeeID",
+          "type": "integer"
+        },
+        "LastName": {
+          "description": "LastName",
+          "type": "string"
+        },
+        "FirstName": {
+          "description": "FirstName",
+          "type": "string"
+        },
+        "Title": {
+          "description": "Title",
+          "type": "string"
+        },
+        "TitleOfCourtesy": {
+          "description": "TitleOfCourtesy",
+          "type": "string"
+        },
+        "BirthDate": {
+          "format": "date",
+          "description": "BirthDate",
+          "type": "string"
+        },
+        "HireDate": {
+          "format": "date",
+          "description": "HireDate",
+          "type": "string"
+        },
+        "Address": {
+          "description": "Address",
+          "type": "string"
+        },
+        "City": {
+          "description": "City",
+          "type": "string"
+        },
+        "Region": {
+          "description": "Region",
+          "type": "string"
+        },
+        "PostalCode": {
+          "description": "PostalCode",
+          "type": "string"
+        },
+        "Country": {
+          "description": "Country",
+          "type": "string"
+        },
+        "HomePhone": {
+          "description": "HomePhone",
+          "type": "string"
+        },
+        "Extension": {
+          "description": "Extension",
+          "type": "string"
+        },
+        "Photo": {
+          "description": "Photo",
+          "type": "string"
+        },
+        "Notes": {
+          "description": "Notes",
+          "type": "string"
+        },
+        "ReportsTo": {
+          "format": "int32",
+          "description": "ReportsTo",
+          "type": "integer"
+        },
+        "PhotoPath": {
+          "description": "PhotoPath",
+          "type": "string"
+        }
+      }
+    },
+    "NorthwindAPI.Models.Territory": {
+      "properties": {
+        "TerritoryID": {
+          "description": "TerritoryID",
+          "type": "string"
+        },
+        "TerritoryDescription": {
+          "description": "TerritoryDescription",
+          "type": "string"
+        },
+        "RegionID": {
+          "format": "int32",
+          "description": "RegionID",
+          "type": "integer"
+        }
+      }
+    },
+    "NorthwindAPI.Models.Region": {
+      "properties": {
+        "RegionID": {
+          "format": "int32",
+          "description": "RegionID",
+          "type": "integer"
+        },
+        "RegionDescription": {
+          "description": "RegionDescription",
+          "type": "string"
+        }
+      }
+    },
+    "NorthwindAPI.Models.Shipper": {
+      "properties": {
+        "ShipperID": {
+          "format": "int32",
+          "description": "ShipperID",
+          "type": "integer"
+        },
+        "CompanyName": {
+          "description": "CompanyName",
+          "type": "string"
+        },
+        "Phone": {
+          "description": "Phone",
+          "type": "string"
+        }
+      }
+    },
+    "NorthwindAPI.Models.Supplier": {
+      "properties": {
+        "SupplierID": {
+          "format": "int32",
+          "description": "SupplierID",
+          "type": "integer"
+        },
+        "CompanyName": {
+          "description": "CompanyName",
+          "type": "string"
+        },
+        "ContactName": {
+          "description": "ContactName",
+          "type": "string"
+        },
+        "ContactTitle": {
+          "description": "ContactTitle",
+          "type": "string"
+        },
+        "Address": {
+          "description": "Address",
+          "type": "string"
+        },
+        "City": {
+          "description": "City",
+          "type": "string"
+        },
+        "Region": {
+          "description": "Region",
+          "type": "string"
+        },
+        "PostalCode": {
+          "description": "PostalCode",
+          "type": "string"
+        },
+        "Country": {
+          "description": "Country",
+          "type": "string"
+        },
+        "Phone": {
+          "description": "Phone",
+          "type": "string"
+        },
+        "Fax": {
+          "description": "Fax",
+          "type": "string"
+        },
+        "HomePage": {
+          "description": "HomePage",
+          "type": "string"
+        }
+      }
+    },
+    "_Error": { "properties": { "error": { "$ref": "#/definitions/_InError" } } },
+    "_InError": {
+      "properties": {
+        "code": { "type": "string" },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}
