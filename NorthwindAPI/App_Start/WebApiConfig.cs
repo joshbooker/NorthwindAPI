@@ -4,6 +4,7 @@ using Microsoft.Restier.EntityFramework;
 using Microsoft.Restier.WebApi;
 using Microsoft.Restier.WebApi.Batch;
 
+
 namespace NorthwindAPI
 {
     public static class WebApiConfig
@@ -11,8 +12,8 @@ namespace NorthwindAPI
         public async static void Register(HttpConfiguration config)
         {
             await config.MapRestierRoute<DbApi<NorthwindContext>>(
-                "Restier",
-                "restier",
+                "Northwind",
+                "Northwind/v4",
                 new RestierBatchHandler(GlobalConfiguration.DefaultServer));
         }
     }

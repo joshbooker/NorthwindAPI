@@ -7,6 +7,7 @@ using Swashbuckle.OData;
 
 using Swashbuckle.Swagger;
 using System.Web.Http.Description;
+using System.Linq;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -171,7 +172,7 @@ namespace NorthwindAPI
                         // alternative implementation for ISwaggerProvider with the CustomProvider option.
                         //
                         c.CustomProvider((defaultProvider) => new ODataSwaggerProvider(defaultProvider, c));
-                        c.OperationFilter<MultipleOperationsWithSameVerbFilter>();
+                        c.OperationFilter<IncludeParameterNamesInOperationIdFilter>();
                     })
                 .EnableSwaggerUi(c =>
                     {
@@ -237,12 +238,35 @@ namespace NorthwindAPI
             {
                 if (operation.parameters != null)
                 {
-                    operation.operationId += "By";
+                    string _operID = "";
                     foreach (var parm in operation.parameters)
                     {
-                        operation.operationId += string.Format("{0}", parm.name);
-                    }
+                        if (!parm.name.StartsWith("$"))	
+					    {
+					        _operID += string.Format("{0}", parm.name);
+                        }
+                        if (_operID.Length != 0)
+                        {
+                            operation.operationId = "By" + _operID;
+                        }
+					}
                 }
             }
         }
+    internal class IncludeParameterNamesInOperationIdFilter : IOperationFilter
+    {
+        public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
+        {
+            if (operation.parameters != null && !operation.operationId.Contains("By") && operation.parameters.Any(p => p.@in == "path"))
+            {
+                // Select the capitalized parameter names
+                var parameters = operation.parameters
+                        .Where(p => p.@in == "path")
+                        .Select(p => System.Globalization.CultureInfo.InvariantCulture.TextInfo.ToTitleCase(p.name));
+
+                // Set the operation id to match the format "OperationByParam1AndParam2"
+                operation.operationId = $"{operation.operationId}By{string.Join("And", parameters)}";
+            }
+        }
+    }
 }
