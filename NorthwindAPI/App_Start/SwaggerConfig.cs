@@ -9,6 +9,8 @@ using Swashbuckle.Swagger;
 using System.Web.Http.Description;
 using System.Linq;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
+using System.Data.Entity.Infrastructure.Pluralization;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -173,7 +175,7 @@ namespace NorthwindAPI
                         // alternative implementation for ISwaggerProvider with the CustomProvider option.
                         //
                         c.CustomProvider((defaultProvider) => new ODataSwaggerProvider(defaultProvider, c));
-                        //c.OperationFilter<AddODataResponseSchemaFilter>();
+                        c.OperationFilter<ChangeSummaryInOperationFilter>();
                     })
                 .EnableSwaggerUi(c =>
                     {
@@ -268,6 +270,33 @@ namespace NorthwindAPI
                 // Set the operation id to match the format "OperationByParam1AndParam2"
                 operation.operationId = $"{operation.operationId}By{string.Join("And", parameters)}";
             }
+        }
+    }
+
+    internal class ChangeSummaryInOperationFilter : IOperationFilter
+    {
+        public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
+        {
+            //RENAME
+            //reverse from 'Orders_Get' to 'Get Orders'
+            string str = $"{string.Join(" ", operation.operationId.Split('_').Reverse())}";
+            //build dict of rename replacements to be made
+            string s = "Get=Get;Put=Replace;Post=Create;Delete=Delete;Patch=Update";
+            var dictRename = s.Split(';').Select(x => x.Split('=')).ToDictionary(x => x[0], x => x[1]);
+            //make rename replacements
+            string newstr = dictRename.Aggregate(str, (current, value) => current.Replace(value.Key, value.Value));
+
+            //SINGULARIZE
+            //if has parameters other than query
+            if (operation.parameters != null &! operation.parameters.All(p => p.@in == "query"))//.Any(p => p.@in == "path" || p.@in == "body"))
+            {   //should prolly reuse pServ rather than new it up repeatedly(?)
+                var pServ = new System.Data.Entity.Infrastructure.Pluralization.EnglishPluralizationService();
+                newstr = $"{newstr.Split(' ')[0]} {pServ.Singularize(newstr.Split(' ')[1])}";
+            }
+
+            //set description and summary
+            operation.description = operation.summary;
+            operation.summary = newstr;
         }
     }
 

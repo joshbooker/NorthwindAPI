@@ -12,10 +12,11 @@
     "/Northwind/v4/Categories": {
       "get": {
         "tags": [ "Categories" ],
-        "summary": "Returns the EntitySet Categories",
+        "summary": "Categories_Get",
+        "description": "Returns the EntitySet Categories",
         "operationId": "Categories_Get",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "$expand",
@@ -64,7 +65,7 @@
           {
             "name": "$count",
             "in": "query",
-            "description": "Includes a count of the matching results in the reponse.",
+            "description": "Includes a count of the matching results in the response.",
             "required": false,
             "type": "boolean"
           }
@@ -72,20 +73,18 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": { "$ref": "#/definitions/Category" }
-            }
+            "schema": { "$ref": "#/definitions/ODataResponse[Category]" }
           }
         },
         "deprecated": false
       },
       "post": {
         "tags": [ "Categories" ],
-        "summary": "Post a new entity to EntitySet Categories",
+        "summary": "Categories_Post",
+        "description": "Post a new entity to EntitySet Categories",
         "operationId": "Categories_Post",
-        "consumes": [ ],
-        "produces": [ ],
+        "consumes": [ "application/json" ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "Category",
@@ -107,10 +106,11 @@
     "/Northwind/v4/Categories({CategoryID})": {
       "get": {
         "tags": [ "Categories" ],
-        "summary": "Returns the entity with the key from Categories",
+        "summary": "Categories_Get",
+        "description": "Returns the entity with the key from Categories",
         "operationId": "Categories_GetByCategoryid",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "CategoryID",
@@ -138,9 +138,10 @@
       },
       "put": {
         "tags": [ "Categories" ],
-        "summary": "Replace entity in EntitySet Categories",
+        "summary": "Categories_Put",
+        "description": "Replace entity in EntitySet Categories",
         "operationId": "Categories_PutByCategoryid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -164,7 +165,8 @@
       },
       "delete": {
         "tags": [ "Categories" ],
-        "summary": "Delete entity in EntitySet Categories",
+        "summary": "Categories_Delete",
+        "description": "Delete entity in EntitySet Categories",
         "operationId": "Categories_DeleteByCategoryid",
         "consumes": [ ],
         "produces": [ ],
@@ -190,9 +192,10 @@
       },
       "patch": {
         "tags": [ "Categories" ],
-        "summary": "Update entity in EntitySet Categories",
+        "summary": "Categories_Patch",
+        "description": "Update entity in EntitySet Categories",
         "operationId": "Categories_PatchByCategoryid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -218,10 +221,11 @@
     "/Northwind/v4/CustomerDemographics": {
       "get": {
         "tags": [ "CustomerDemographics" ],
-        "summary": "Returns the EntitySet CustomerDemographics",
+        "summary": "CustomerDemographics_Get",
+        "description": "Returns the EntitySet CustomerDemographics",
         "operationId": "CustomerDemographics_Get",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "$expand",
@@ -270,7 +274,7 @@
           {
             "name": "$count",
             "in": "query",
-            "description": "Includes a count of the matching results in the reponse.",
+            "description": "Includes a count of the matching results in the response.",
             "required": false,
             "type": "boolean"
           }
@@ -278,20 +282,18 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": { "$ref": "#/definitions/CustomerDemographic" }
-            }
+            "schema": { "$ref": "#/definitions/ODataResponse[CustomerDemographic]" }
           }
         },
         "deprecated": false
       },
       "post": {
         "tags": [ "CustomerDemographics" ],
-        "summary": "Post a new entity to EntitySet CustomerDemographics",
+        "summary": "CustomerDemographics_Post",
+        "description": "Post a new entity to EntitySet CustomerDemographics",
         "operationId": "CustomerDemographics_Post",
-        "consumes": [ ],
-        "produces": [ ],
+        "consumes": [ "application/json" ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "CustomerDemographic",
@@ -313,10 +315,11 @@
     "/Northwind/v4/CustomerDemographics('{CustomerTypeID}')": {
       "get": {
         "tags": [ "CustomerDemographics" ],
-        "summary": "Returns the entity with the key from CustomerDemographics",
+        "summary": "CustomerDemographics_Get",
+        "description": "Returns the entity with the key from CustomerDemographics",
         "operationId": "CustomerDemographics_GetByCustomertypeid",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "CustomerTypeID",
@@ -343,9 +346,10 @@
       },
       "put": {
         "tags": [ "CustomerDemographics" ],
-        "summary": "Replace entity in EntitySet CustomerDemographics",
+        "summary": "CustomerDemographics_Put",
+        "description": "Replace entity in EntitySet CustomerDemographics",
         "operationId": "CustomerDemographics_PutByCustomertypeid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -368,7 +372,8 @@
       },
       "delete": {
         "tags": [ "CustomerDemographics" ],
-        "summary": "Delete entity in EntitySet CustomerDemographics",
+        "summary": "CustomerDemographics_Delete",
+        "description": "Delete entity in EntitySet CustomerDemographics",
         "operationId": "CustomerDemographics_DeleteByCustomertypeid",
         "consumes": [ ],
         "produces": [ ],
@@ -393,9 +398,10 @@
       },
       "patch": {
         "tags": [ "CustomerDemographics" ],
-        "summary": "Update entity in EntitySet CustomerDemographics",
+        "summary": "CustomerDemographics_Patch",
+        "description": "Update entity in EntitySet CustomerDemographics",
         "operationId": "CustomerDemographics_PatchByCustomertypeid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -420,10 +426,11 @@
     "/Northwind/v4/Customers": {
       "get": {
         "tags": [ "Customers" ],
-        "summary": "Returns the EntitySet Customers",
+        "summary": "Customers_Get",
+        "description": "Returns the EntitySet Customers",
         "operationId": "Customers_Get",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "$expand",
@@ -472,7 +479,7 @@
           {
             "name": "$count",
             "in": "query",
-            "description": "Includes a count of the matching results in the reponse.",
+            "description": "Includes a count of the matching results in the response.",
             "required": false,
             "type": "boolean"
           }
@@ -480,20 +487,18 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": { "$ref": "#/definitions/Customer" }
-            }
+            "schema": { "$ref": "#/definitions/ODataResponse[Customer]" }
           }
         },
         "deprecated": false
       },
       "post": {
         "tags": [ "Customers" ],
-        "summary": "Post a new entity to EntitySet Customers",
+        "summary": "Customers_Post",
+        "description": "Post a new entity to EntitySet Customers",
         "operationId": "Customers_Post",
-        "consumes": [ ],
-        "produces": [ ],
+        "consumes": [ "application/json" ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "Customer",
@@ -515,10 +520,11 @@
     "/Northwind/v4/Customers('{CustomerID}')": {
       "get": {
         "tags": [ "Customers" ],
-        "summary": "Returns the entity with the key from Customers",
+        "summary": "Customers_Get",
+        "description": "Returns the entity with the key from Customers",
         "operationId": "Customers_GetByCustomerid",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "CustomerID",
@@ -545,9 +551,10 @@
       },
       "put": {
         "tags": [ "Customers" ],
-        "summary": "Replace entity in EntitySet Customers",
+        "summary": "Customers_Put",
+        "description": "Replace entity in EntitySet Customers",
         "operationId": "Customers_PutByCustomerid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -570,7 +577,8 @@
       },
       "delete": {
         "tags": [ "Customers" ],
-        "summary": "Delete entity in EntitySet Customers",
+        "summary": "Customers_Delete",
+        "description": "Delete entity in EntitySet Customers",
         "operationId": "Customers_DeleteByCustomerid",
         "consumes": [ ],
         "produces": [ ],
@@ -595,9 +603,10 @@
       },
       "patch": {
         "tags": [ "Customers" ],
-        "summary": "Update entity in EntitySet Customers",
+        "summary": "Customers_Patch",
+        "description": "Update entity in EntitySet Customers",
         "operationId": "Customers_PatchByCustomerid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -621,11 +630,12 @@
     },
     "/Northwind/v4/Employees": {
       "get": {
-        "tags": [ "Employees" ],oreders
-        "summary": "Returns the EntitySet Employees",
+        "tags": [ "Employees" ],
+        "summary": "Employees_Get",
+        "description": "Returns the EntitySet Employees",
         "operationId": "Employees_Get",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "$expand",
@@ -674,7 +684,7 @@
           {
             "name": "$count",
             "in": "query",
-            "description": "Includes a count of the matching results in the reponse.",
+            "description": "Includes a count of the matching results in the response.",
             "required": false,
             "type": "boolean"
           }
@@ -682,20 +692,18 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": { "$ref": "#/definitions/Employee" }
-            }
+            "schema": { "$ref": "#/definitions/ODataResponse[Employee]" }
           }
         },
         "deprecated": false
       },
       "post": {
         "tags": [ "Employees" ],
-        "summary": "Post a new entity to EntitySet Employees",
+        "summary": "Employees_Post",
+        "description": "Post a new entity to EntitySet Employees",
         "operationId": "Employees_Post",
-        "consumes": [ ],
-        "produces": [ ],
+        "consumes": [ "application/json" ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "Employee",
@@ -717,10 +725,11 @@
     "/Northwind/v4/Employees({EmployeeID})": {
       "get": {
         "tags": [ "Employees" ],
-        "summary": "Returns the entity with the key from Employees",
+        "summary": "Employees_Get",
+        "description": "Returns the entity with the key from Employees",
         "operationId": "Employees_GetByEmployeeid",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "EmployeeID",
@@ -748,9 +757,10 @@
       },
       "put": {
         "tags": [ "Employees" ],
-        "summary": "Replace entity in EntitySet Employees",
+        "summary": "Employees_Put",
+        "description": "Replace entity in EntitySet Employees",
         "operationId": "Employees_PutByEmployeeid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -774,7 +784,8 @@
       },
       "delete": {
         "tags": [ "Employees" ],
-        "summary": "Delete entity in EntitySet Employees",
+        "summary": "Employees_Delete",
+        "description": "Delete entity in EntitySet Employees",
         "operationId": "Employees_DeleteByEmployeeid",
         "consumes": [ ],
         "produces": [ ],
@@ -800,9 +811,10 @@
       },
       "patch": {
         "tags": [ "Employees" ],
-        "summary": "Update entity in EntitySet Employees",
+        "summary": "Employees_Patch",
+        "description": "Update entity in EntitySet Employees",
         "operationId": "Employees_PatchByEmployeeid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -828,10 +840,11 @@
     "/Northwind/v4/Order_Details": {
       "get": {
         "tags": [ "Order_Details" ],
-        "summary": "Returns the EntitySet Order_Details",
+        "summary": "Order_Details_Get",
+        "description": "Returns the EntitySet Order_Details",
         "operationId": "Order_Details_Get",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "$expand",
@@ -880,7 +893,7 @@
           {
             "name": "$count",
             "in": "query",
-            "description": "Includes a count of the matching results in the reponse.",
+            "description": "Includes a count of the matching results in the response.",
             "required": false,
             "type": "boolean"
           }
@@ -888,20 +901,18 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": { "$ref": "#/definitions/Order_Detail" }
-            }
+            "schema": { "$ref": "#/definitions/ODataResponse[Order_Detail]" }
           }
         },
         "deprecated": false
       },
       "post": {
         "tags": [ "Order_Details" ],
-        "summary": "Post a new entity to EntitySet Order_Details",
+        "summary": "Order_Details_Post",
+        "description": "Post a new entity to EntitySet Order_Details",
         "operationId": "Order_Details_Post",
-        "consumes": [ ],
-        "produces": [ ],
+        "consumes": [ "application/json" ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "Order_Detail",
@@ -923,10 +934,11 @@
     "/Northwind/v4/Order_Details(OrderID={OrderID}, ProductID={ProductID})": {
       "get": {
         "tags": [ "Order_Details" ],
-        "summary": "Returns the entity with the key from Order_Details",
+        "summary": "Order_Details_Get",
+        "description": "Returns the entity with the key from Order_Details",
         "operationId": "Order_Details_GetByOrderidAndProductid",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "OrderID",
@@ -962,9 +974,10 @@
       },
       "put": {
         "tags": [ "Order_Details" ],
-        "summary": "Replace entity in EntitySet Order_Details",
+        "summary": "Order_Details_Put",
+        "description": "Replace entity in EntitySet Order_Details",
         "operationId": "Order_Details_PutByOrderidAndProductid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -996,7 +1009,8 @@
       },
       "delete": {
         "tags": [ "Order_Details" ],
-        "summary": "Delete entity in EntitySet Order_Details",
+        "summary": "Order_Details_Delete",
+        "description": "Delete entity in EntitySet Order_Details",
         "operationId": "Order_Details_DeleteByOrderidAndProductid",
         "consumes": [ ],
         "produces": [ ],
@@ -1030,9 +1044,10 @@
       },
       "patch": {
         "tags": [ "Order_Details" ],
-        "summary": "Update entity in EntitySet Order_Details",
+        "summary": "Order_Details_Patch",
+        "description": "Update entity in EntitySet Order_Details",
         "operationId": "Order_Details_PatchByOrderidAndProductid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -1066,10 +1081,11 @@
     "/Northwind/v4/Orders": {
       "get": {
         "tags": [ "Orders" ],
-        "summary": "Returns the EntitySet Orders",
+        "summary": "Orders_Get",
+        "description": "Returns the EntitySet Orders",
         "operationId": "Orders_Get",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "$expand",
@@ -1118,7 +1134,7 @@
           {
             "name": "$count",
             "in": "query",
-            "description": "Includes a count of the matching results in the reponse.",
+            "description": "Includes a count of the matching results in the response.",
             "required": false,
             "type": "boolean"
           }
@@ -1126,30 +1142,18 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {
-              "title": "response",
-              "type": "object",
-              "properties": {
-                "context": {
-                  "type": "string"
-                },
-                "value": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/Order"
-                  }
-                }
-              }
-            }
-          },
-          "deprecated": false
+            "schema": { "$ref": "#/definitions/ODataResponse[Order]" }
+          }
         },
+        "deprecated": false
+      },
       "post": {
         "tags": [ "Orders" ],
-        "summary": "Post a new entity to EntitySet Orders",
+        "summary": "Orders_Post",
+        "description": "Post a new entity to EntitySet Orders",
         "operationId": "Orders_Post",
-        "consumes": [ ],
-        "produces": [ ],
+        "consumes": [ "application/json" ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "Order",
@@ -1171,10 +1175,11 @@
     "/Northwind/v4/Orders({OrderID})": {
       "get": {
         "tags": [ "Orders" ],
-        "summary": "Returns the entity with the key from Orders",
+        "summary": "Orders_Get",
+        "description": "Returns the entity with the key from Orders",
         "operationId": "Orders_GetByOrderid",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "OrderID",
@@ -1202,9 +1207,10 @@
       },
       "put": {
         "tags": [ "Orders" ],
-        "summary": "Replace entity in EntitySet Orders",
+        "summary": "Orders_Put",
+        "description": "Replace entity in EntitySet Orders",
         "operationId": "Orders_PutByOrderid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -1228,7 +1234,8 @@
       },
       "delete": {
         "tags": [ "Orders" ],
-        "summary": "Delete entity in EntitySet Orders",
+        "summary": "Orders_Delete",
+        "description": "Delete entity in EntitySet Orders",
         "operationId": "Orders_DeleteByOrderid",
         "consumes": [ ],
         "produces": [ ],
@@ -1254,9 +1261,10 @@
       },
       "patch": {
         "tags": [ "Orders" ],
-        "summary": "Update entity in EntitySet Orders",
+        "summary": "Orders_Patch",
+        "description": "Update entity in EntitySet Orders",
         "operationId": "Orders_PatchByOrderid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -1282,10 +1290,11 @@
     "/Northwind/v4/Products": {
       "get": {
         "tags": [ "Products" ],
-        "summary": "Returns the EntitySet Products",
+        "summary": "Products_Get",
+        "description": "Returns the EntitySet Products",
         "operationId": "Products_Get",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "$expand",
@@ -1334,7 +1343,7 @@
           {
             "name": "$count",
             "in": "query",
-            "description": "Includes a count of the matching results in the reponse.",
+            "description": "Includes a count of the matching results in the response.",
             "required": false,
             "type": "boolean"
           }
@@ -1342,20 +1351,18 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": { "$ref": "#/definitions/Product" }
-            }
+            "schema": { "$ref": "#/definitions/ODataResponse[Product]" }
           }
         },
         "deprecated": false
       },
       "post": {
         "tags": [ "Products" ],
-        "summary": "Post a new entity to EntitySet Products",
+        "summary": "Products_Post",
+        "description": "Post a new entity to EntitySet Products",
         "operationId": "Products_Post",
-        "consumes": [ ],
-        "produces": [ ],
+        "consumes": [ "application/json" ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "Product",
@@ -1377,10 +1384,11 @@
     "/Northwind/v4/Products({ProductID})": {
       "get": {
         "tags": [ "Products" ],
-        "summary": "Returns the entity with the key from Products",
+        "summary": "Products_Get",
+        "description": "Returns the entity with the key from Products",
         "operationId": "Products_GetByProductid",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "ProductID",
@@ -1408,9 +1416,10 @@
       },
       "put": {
         "tags": [ "Products" ],
-        "summary": "Replace entity in EntitySet Products",
+        "summary": "Products_Put",
+        "description": "Replace entity in EntitySet Products",
         "operationId": "Products_PutByProductid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -1434,7 +1443,8 @@
       },
       "delete": {
         "tags": [ "Products" ],
-        "summary": "Delete entity in EntitySet Products",
+        "summary": "Products_Delete",
+        "description": "Delete entity in EntitySet Products",
         "operationId": "Products_DeleteByProductid",
         "consumes": [ ],
         "produces": [ ],
@@ -1460,9 +1470,10 @@
       },
       "patch": {
         "tags": [ "Products" ],
-        "summary": "Update entity in EntitySet Products",
+        "summary": "Products_Patch",
+        "description": "Update entity in EntitySet Products",
         "operationId": "Products_PatchByProductid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -1488,10 +1499,11 @@
     "/Northwind/v4/Regions": {
       "get": {
         "tags": [ "Regions" ],
-        "summary": "Returns the EntitySet Regions",
+        "summary": "Regions_Get",
+        "description": "Returns the EntitySet Regions",
         "operationId": "Regions_Get",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "$expand",
@@ -1540,7 +1552,7 @@
           {
             "name": "$count",
             "in": "query",
-            "description": "Includes a count of the matching results in the reponse.",
+            "description": "Includes a count of the matching results in the response.",
             "required": false,
             "type": "boolean"
           }
@@ -1548,20 +1560,18 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": { "$ref": "#/definitions/Region" }
-            }
+            "schema": { "$ref": "#/definitions/ODataResponse[Region]" }
           }
         },
         "deprecated": false
       },
       "post": {
         "tags": [ "Regions" ],
-        "summary": "Post a new entity to EntitySet Regions",
+        "summary": "Regions_Post",
+        "description": "Post a new entity to EntitySet Regions",
         "operationId": "Regions_Post",
-        "consumes": [ ],
-        "produces": [ ],
+        "consumes": [ "application/json" ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "Region",
@@ -1583,10 +1593,11 @@
     "/Northwind/v4/Regions({RegionID})": {
       "get": {
         "tags": [ "Regions" ],
-        "summary": "Returns the entity with the key from Regions",
+        "summary": "Regions_Get",
+        "description": "Returns the entity with the key from Regions",
         "operationId": "Regions_GetByRegionid",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "RegionID",
@@ -1614,9 +1625,10 @@
       },
       "put": {
         "tags": [ "Regions" ],
-        "summary": "Replace entity in EntitySet Regions",
+        "summary": "Regions_Put",
+        "description": "Replace entity in EntitySet Regions",
         "operationId": "Regions_PutByRegionid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -1640,7 +1652,8 @@
       },
       "delete": {
         "tags": [ "Regions" ],
-        "summary": "Delete entity in EntitySet Regions",
+        "summary": "Regions_Delete",
+        "description": "Delete entity in EntitySet Regions",
         "operationId": "Regions_DeleteByRegionid",
         "consumes": [ ],
         "produces": [ ],
@@ -1666,9 +1679,10 @@
       },
       "patch": {
         "tags": [ "Regions" ],
-        "summary": "Update entity in EntitySet Regions",
+        "summary": "Regions_Patch",
+        "description": "Update entity in EntitySet Regions",
         "operationId": "Regions_PatchByRegionid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -1694,10 +1708,11 @@
     "/Northwind/v4/Shippers": {
       "get": {
         "tags": [ "Shippers" ],
-        "summary": "Returns the EntitySet Shippers",
+        "summary": "Shippers_Get",
+        "description": "Returns the EntitySet Shippers",
         "operationId": "Shippers_Get",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "$expand",
@@ -1746,7 +1761,7 @@
           {
             "name": "$count",
             "in": "query",
-            "description": "Includes a count of the matching results in the reponse.",
+            "description": "Includes a count of the matching results in the response.",
             "required": false,
             "type": "boolean"
           }
@@ -1754,20 +1769,18 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": { "$ref": "#/definitions/Shipper" }
-            }
+            "schema": { "$ref": "#/definitions/ODataResponse[Shipper]" }
           }
         },
         "deprecated": false
       },
       "post": {
         "tags": [ "Shippers" ],
-        "summary": "Post a new entity to EntitySet Shippers",
+        "summary": "Shippers_Post",
+        "description": "Post a new entity to EntitySet Shippers",
         "operationId": "Shippers_Post",
-        "consumes": [ ],
-        "produces": [ ],
+        "consumes": [ "application/json" ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "Shipper",
@@ -1789,10 +1802,11 @@
     "/Northwind/v4/Shippers({ShipperID})": {
       "get": {
         "tags": [ "Shippers" ],
-        "summary": "Returns the entity with the key from Shippers",
+        "summary": "Shippers_Get",
+        "description": "Returns the entity with the key from Shippers",
         "operationId": "Shippers_GetByShipperid",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "ShipperID",
@@ -1820,9 +1834,10 @@
       },
       "put": {
         "tags": [ "Shippers" ],
-        "summary": "Replace entity in EntitySet Shippers",
+        "summary": "Shippers_Put",
+        "description": "Replace entity in EntitySet Shippers",
         "operationId": "Shippers_PutByShipperid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -1846,7 +1861,8 @@
       },
       "delete": {
         "tags": [ "Shippers" ],
-        "summary": "Delete entity in EntitySet Shippers",
+        "summary": "Shippers_Delete",
+        "description": "Delete entity in EntitySet Shippers",
         "operationId": "Shippers_DeleteByShipperid",
         "consumes": [ ],
         "produces": [ ],
@@ -1872,9 +1888,10 @@
       },
       "patch": {
         "tags": [ "Shippers" ],
-        "summary": "Update entity in EntitySet Shippers",
+        "summary": "Shippers_Patch",
+        "description": "Update entity in EntitySet Shippers",
         "operationId": "Shippers_PatchByShipperid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -1900,10 +1917,11 @@
     "/Northwind/v4/Suppliers": {
       "get": {
         "tags": [ "Suppliers" ],
-        "summary": "Returns the EntitySet Suppliers",
+        "summary": "Suppliers_Get",
+        "description": "Returns the EntitySet Suppliers",
         "operationId": "Suppliers_Get",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "$expand",
@@ -1952,7 +1970,7 @@
           {
             "name": "$count",
             "in": "query",
-            "description": "Includes a count of the matching results in the reponse.",
+            "description": "Includes a count of the matching results in the response.",
             "required": false,
             "type": "boolean"
           }
@@ -1960,20 +1978,18 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": { "$ref": "#/definitions/Supplier" }
-            }
+            "schema": { "$ref": "#/definitions/ODataResponse[Supplier]" }
           }
         },
         "deprecated": false
       },
       "post": {
         "tags": [ "Suppliers" ],
-        "summary": "Post a new entity to EntitySet Suppliers",
+        "summary": "Suppliers_Post",
+        "description": "Post a new entity to EntitySet Suppliers",
         "operationId": "Suppliers_Post",
-        "consumes": [ ],
-        "produces": [ ],
+        "consumes": [ "application/json" ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "Supplier",
@@ -1995,10 +2011,11 @@
     "/Northwind/v4/Suppliers({SupplierID})": {
       "get": {
         "tags": [ "Suppliers" ],
-        "summary": "Returns the entity with the key from Suppliers",
+        "summary": "Suppliers_Get",
+        "description": "Returns the entity with the key from Suppliers",
         "operationId": "Suppliers_GetBySupplierid",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "SupplierID",
@@ -2026,9 +2043,10 @@
       },
       "put": {
         "tags": [ "Suppliers" ],
-        "summary": "Replace entity in EntitySet Suppliers",
+        "summary": "Suppliers_Put",
+        "description": "Replace entity in EntitySet Suppliers",
         "operationId": "Suppliers_PutBySupplierid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -2052,7 +2070,8 @@
       },
       "delete": {
         "tags": [ "Suppliers" ],
-        "summary": "Delete entity in EntitySet Suppliers",
+        "summary": "Suppliers_Delete",
+        "description": "Delete entity in EntitySet Suppliers",
         "operationId": "Suppliers_DeleteBySupplierid",
         "consumes": [ ],
         "produces": [ ],
@@ -2078,9 +2097,10 @@
       },
       "patch": {
         "tags": [ "Suppliers" ],
-        "summary": "Update entity in EntitySet Suppliers",
+        "summary": "Suppliers_Patch",
+        "description": "Update entity in EntitySet Suppliers",
         "operationId": "Suppliers_PatchBySupplierid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -2106,10 +2126,11 @@
     "/Northwind/v4/Territories": {
       "get": {
         "tags": [ "Territories" ],
-        "summary": "Returns the EntitySet Territories",
+        "summary": "Territories_Get",
+        "description": "Returns the EntitySet Territories",
         "operationId": "Territories_Get",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "$expand",
@@ -2158,7 +2179,7 @@
           {
             "name": "$count",
             "in": "query",
-            "description": "Includes a count of the matching results in the reponse.",
+            "description": "Includes a count of the matching results in the response.",
             "required": false,
             "type": "boolean"
           }
@@ -2166,20 +2187,18 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": { "$ref": "#/definitions/Territory" }
-            }
+            "schema": { "$ref": "#/definitions/ODataResponse[Territory]" }
           }
         },
         "deprecated": false
       },
       "post": {
         "tags": [ "Territories" ],
-        "summary": "Post a new entity to EntitySet Territories",
+        "summary": "Territories_Post",
+        "description": "Post a new entity to EntitySet Territories",
         "operationId": "Territories_Post",
-        "consumes": [ ],
-        "produces": [ ],
+        "consumes": [ "application/json" ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "Territory",
@@ -2201,10 +2220,11 @@
     "/Northwind/v4/Territories('{TerritoryID}')": {
       "get": {
         "tags": [ "Territories" ],
-        "summary": "Returns the entity with the key from Territories",
+        "summary": "Territories_Get",
+        "description": "Returns the entity with the key from Territories",
         "operationId": "Territories_GetByTerritoryid",
         "consumes": [ ],
-        "produces": [ ],
+        "produces": [ "application/json" ],
         "parameters": [
           {
             "name": "TerritoryID",
@@ -2231,9 +2251,10 @@
       },
       "put": {
         "tags": [ "Territories" ],
-        "summary": "Replace entity in EntitySet Territories",
+        "summary": "Territories_Put",
+        "description": "Replace entity in EntitySet Territories",
         "operationId": "Territories_PutByTerritoryid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -2256,7 +2277,8 @@
       },
       "delete": {
         "tags": [ "Territories" ],
-        "summary": "Delete entity in EntitySet Territories",
+        "summary": "Territories_Delete",
+        "description": "Delete entity in EntitySet Territories",
         "operationId": "Territories_DeleteByTerritoryid",
         "consumes": [ ],
         "produces": [ ],
@@ -2281,9 +2303,10 @@
       },
       "patch": {
         "tags": [ "Territories" ],
-        "summary": "Update entity in EntitySet Territories",
+        "summary": "Territories_Patch",
+        "description": "Update entity in EntitySet Territories",
         "operationId": "Territories_PatchByTerritoryid",
-        "consumes": [ ],
+        "consumes": [ "application/json" ],
         "produces": [ ],
         "parameters": [
           {
@@ -2307,6 +2330,16 @@
     }
   },
   "definitions": {
+    "ODataResponse[Category]": {
+      "type": "object",
+      "properties": {
+        "@odata.context": { "type": "string" },
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Category" }
+        }
+      }
+    },
     "Category": {
       "required": [ "CategoryName" ],
       "type": "object",
@@ -2731,6 +2764,106 @@
           "maxLength": 50,
           "minLength": 0,
           "type": "string"
+        }
+      }
+    },
+    "ODataResponse[CustomerDemographic]": {
+      "type": "object",
+      "properties": {
+        "@odata.context": { "type": "string" },
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/CustomerDemographic" }
+        }
+      }
+    },
+    "ODataResponse[Customer]": {
+      "type": "object",
+      "properties": {
+        "@odata.context": { "type": "string" },
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Customer" }
+        }
+      }
+    },
+    "ODataResponse[Employee]": {
+      "type": "object",
+      "properties": {
+        "@odata.context": { "type": "string" },
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Employee" }
+        }
+      }
+    },
+    "ODataResponse[Order_Detail]": {
+      "type": "object",
+      "properties": {
+        "@odata.context": { "type": "string" },
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Order_Detail" }
+        }
+      }
+    },
+    "ODataResponse[Order]": {
+      "type": "object",
+      "properties": {
+        "@odata.context": { "type": "string" },
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Order" }
+        }
+      }
+    },
+    "ODataResponse[Product]": {
+      "type": "object",
+      "properties": {
+        "@odata.context": { "type": "string" },
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Product" }
+        }
+      }
+    },
+    "ODataResponse[Region]": {
+      "type": "object",
+      "properties": {
+        "@odata.context": { "type": "string" },
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Region" }
+        }
+      }
+    },
+    "ODataResponse[Shipper]": {
+      "type": "object",
+      "properties": {
+        "@odata.context": { "type": "string" },
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Shipper" }
+        }
+      }
+    },
+    "ODataResponse[Supplier]": {
+      "type": "object",
+      "properties": {
+        "@odata.context": { "type": "string" },
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Supplier" }
+        }
+      }
+    },
+    "ODataResponse[Territory]": {
+      "type": "object",
+      "properties": {
+        "@odata.context": { "type": "string" },
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Territory" }
         }
       }
     }
