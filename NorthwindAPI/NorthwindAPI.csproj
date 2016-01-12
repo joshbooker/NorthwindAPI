@@ -102,7 +102,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Swashbuckle.OData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Swashbuckle.OData.2.9.2\lib\net452\Swashbuckle.OData.dll</HintPath>
+      <HintPath>..\packages\Swashbuckle.OData.2.10.1\lib\net452\Swashbuckle.OData.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.IdentityModel.Tokens.Jwt">

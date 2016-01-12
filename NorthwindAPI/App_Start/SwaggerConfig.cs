@@ -8,6 +8,7 @@ using Swashbuckle.OData;
 using Swashbuckle.Swagger;
 using System.Web.Http.Description;
 using System.Linq;
+using Newtonsoft.Json.Linq;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -172,7 +173,7 @@ namespace NorthwindAPI
                         // alternative implementation for ISwaggerProvider with the CustomProvider option.
                         //
                         c.CustomProvider((defaultProvider) => new ODataSwaggerProvider(defaultProvider, c));
-                        c.OperationFilter<IncludeParameterNamesInOperationIdFilter>();
+                        //c.OperationFilter<AddODataResponseSchemaFilter>();
                     })
                 .EnableSwaggerUi(c =>
                     {
@@ -266,6 +267,30 @@ namespace NorthwindAPI
 
                 // Set the operation id to match the format "OperationByParam1AndParam2"
                 operation.operationId = $"{operation.operationId}By{string.Join("And", parameters)}";
+            }
+        }
+    }
+
+    internal class AddODataResponseSchemaFilter : IOperationFilter
+    {
+        public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
+        {
+            if (operation.operationId.Contains("Orders_Get"))
+            {
+                // Select the capitalized parameter names
+                //var response = operation.responses
+                //    .SingleOrDefault(r => r.Key == "200");
+                //JObject swaggerResponses = new JObject();
+                //response = new Dictionary<string, Response>().Response("200", "EntitySet " + entitySet.Name, entitySet.GetEntityType()).DefaultErrorResponse());
+                //var response = new Swashbuckle.Swagger.Response ("200");
+                //response.schema = new Swashbuckle.Swagger.Schema();
+
+                //.Where(r => r. .@in == "path")
+                //.Select(p => System.Globalization.CultureInfo.InvariantCulture.TextInfo.ToTitleCase(p.name));
+                //operation.Responses(new Dictionary<string, Response>().Response("200", "EntitySet " + entitySet.Name, entitySet.GetEntityType()).DefaultErrorResponse())
+                // Set the operation id to match the format "OperationByParam1AndParam2"
+                //operation.operationId = $"{operation.operationId}By{string.Join("And", parameters)}";
+                //operation.responses.Add()
             }
         }
     }

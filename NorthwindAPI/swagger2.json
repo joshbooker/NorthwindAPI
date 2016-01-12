@@ -621,7 +621,7 @@
     },
     "/Northwind/v4/Employees": {
       "get": {
-        "tags": [ "Employees" ],
+        "tags": [ "Employees" ],oreders
         "summary": "Returns the EntitySet Employees",
         "operationId": "Employees_Get",
         "consumes": [ ],
@@ -1127,13 +1127,23 @@
           "200": {
             "description": "OK",
             "schema": {
-              "type": "array",
-              "items": { "$ref": "#/definitions/Order" }
+              "title": "response",
+              "type": "object",
+              "properties": {
+                "context": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Order"
+                  }
+                }
+              }
             }
-          }
+          },
+          "deprecated": false
         },
-        "deprecated": false
-      },
       "post": {
         "tags": [ "Orders" ],
         "summary": "Post a new entity to EntitySet Orders",
